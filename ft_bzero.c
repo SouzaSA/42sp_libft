@@ -6,9 +6,11 @@
 /*   By: sde-alva <sde-alva@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 14:34:53 by sde-alva          #+#    #+#             */
-/*   Updated: 2021/07/23 16:18:13 by sde-alva         ###   ########.fr       */
+/*   Updated: 2021/07/25 17:24:19 by sde-alva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

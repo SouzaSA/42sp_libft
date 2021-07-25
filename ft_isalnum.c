@@ -6,11 +6,11 @@
 /*   By: sde-alva <sde-alva@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 13:57:27 by sde-alva          #+#    #+#             */
-/*   Updated: 2021/07/23 14:03:02 by sde-alva         ###   ########.fr       */
+/*   Updated: 2021/07/25 17:04:44 by sde-alva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+int	ft_isalnum(int c)
 {
 	int	is_alnum;
 

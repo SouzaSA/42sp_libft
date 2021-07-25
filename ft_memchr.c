@@ -6,9 +6,11 @@
 /*   By: sde-alva <sde-alva@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 19:10:52 by sde-alva          #+#    #+#             */
-/*   Updated: 2021/07/23 19:45:21 by sde-alva         ###   ########.fr       */
+/*   Updated: 2021/07/25 17:24:56 by sde-alva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

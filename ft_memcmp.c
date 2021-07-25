@@ -6,9 +6,11 @@
 /*   By: sde-alva <sde-alva@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 19:46:36 by sde-alva          #+#    #+#             */
-/*   Updated: 2021/07/23 20:04:00 by sde-alva         ###   ########.fr       */
+/*   Updated: 2021/07/25 17:25:26 by sde-alva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

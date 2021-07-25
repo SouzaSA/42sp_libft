@@ -6,9 +6,11 @@
 /*   By: sde-alva <sde-alva@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 17:11:58 by sde-alva          #+#    #+#             */
-/*   Updated: 2021/07/23 17:15:54 by sde-alva         ###   ########.fr       */
+/*   Updated: 2021/07/25 17:27:02 by sde-alva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 size_t	strlcat(char *dst, const char *src, size_t size)
 {

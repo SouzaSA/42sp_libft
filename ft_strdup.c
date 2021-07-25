@@ -6,13 +6,11 @@
 /*   By: sde-alva <sde-alva@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 14:11:46 by sde-alva          #+#    #+#             */
-/*   Updated: 2021/07/24 14:51:02 by sde-alva         ###   ########.fr       */
+/*   Updated: 2021/07/25 17:12:40 by sde-alva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-size_t	ft_strlen(const char *s);
+#include "libft.h"
 
 char	*ft_strdup(const char *s)
 {

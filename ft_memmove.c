@@ -6,9 +6,11 @@
 /*   By: sde-alva <sde-alva@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 14:48:00 by sde-alva          #+#    #+#             */
-/*   Updated: 2021/07/24 18:05:39 by sde-alva         ###   ########.fr       */
+/*   Updated: 2021/07/25 17:26:11 by sde-alva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {

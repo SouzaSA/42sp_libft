@@ -6,9 +6,11 @@
 /*   By: sde-alva <sde-alva@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 14:26:02 by sde-alva          #+#    #+#             */
-/*   Updated: 2021/07/23 15:59:09 by sde-alva         ###   ########.fr       */
+/*   Updated: 2021/07/25 17:26:28 by sde-alva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {

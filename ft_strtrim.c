@@ -6,13 +6,12 @@
 /*   By: sde-alva <sde-alva@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 16:09:56 by sde-alva          #+#    #+#             */
-/*   Updated: 2021/07/24 17:29:57 by sde-alva         ###   ########.fr       */
+/*   Updated: 2021/07/25 17:20:20 by sde-alva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-size_t			ft_strlen(const char *s);
 static int		ft_is_in_set(char const set);
 static size_t	ft_get_first_valid(char const *s1, char const *set);
 static size_t	ft_get_last_valid(char const *s1, char const *set);
