@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sde-alva <sde-alva@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/23 14:48:00 by sde-alva          #+#    #+#             */
-/*   Updated: 2021/07/24 18:05:39 by sde-alva         ###   ########.fr       */
+/*   Created: 2021/07/24 13:48:12 by sde-alva          #+#    #+#             */
+/*   Updated: 2021/07/24 14:10:25 by sde-alva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
-{
-	int		i;
+#include <stdlib.h>
 
-	i = 0;
-	while (i < n)
-	{
-		if (dest < src)
-		{
-			d[i] = s[i];
-		}
-		else
-		{
-			d[n - i] = s[n - i];
-		}
-		i++;
-	}	
-	return (dest);
+void	*ft_calloc(size_t nmemb, size_t size)
+{
+	size_t	total;
+	void	*ptr;
+
+	total = nmemb * size;
+	ptr = NULL;
+	if (total >= nmemb || total >= size)
+		prt = malloc(nmemb * size);
+	return (ptr);
 }

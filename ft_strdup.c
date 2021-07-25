@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sde-alva <sde-alva@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/23 14:48:00 by sde-alva          #+#    #+#             */
-/*   Updated: 2021/07/24 18:05:39 by sde-alva         ###   ########.fr       */
+/*   Created: 2021/07/24 14:11:46 by sde-alva          #+#    #+#             */
+/*   Updated: 2021/07/24 14:51:02 by sde-alva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+#include <stdlib.h>
+
+size_t	ft_strlen(const char *s);
+
+char	*ft_strdup(const char *s)
 {
 	int		i;
+	int		s_len;
+	char	*dest;
 
 	i = 0;
-	while (i < n)
+	s_len = ft_strlen(s);
+	dest = malloc(s_len * sizeof(char) + 1);
+	while (i <= s_len)
 	{
-		if (dest < src)
-		{
-			d[i] = s[i];
-		}
-		else
-		{
-			d[n - i] = s[n - i];
-		}
+		dest[i] = s[i];
 		i++;
-	}	
+	}
 	return (dest);
 }
