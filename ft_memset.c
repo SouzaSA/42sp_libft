@@ -6,7 +6,7 @@
 /*   By: sde-alva <sde-alva@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 14:26:02 by sde-alva          #+#    #+#             */
-/*   Updated: 2021/07/25 17:26:28 by sde-alva         ###   ########.fr       */
+/*   Updated: 2021/07/25 18:39:59 by sde-alva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memset(void *s, int c, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		s[i] = c;
+		((char *)s)[i] = c;
 		i++;
 	}
 	return (s);

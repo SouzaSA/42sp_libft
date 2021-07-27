@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sde-alva <sde-alva@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/23 13:57:49 by sde-alva          #+#    #+#             */
-/*   Updated: 2021/07/25 18:19:35 by sde-alva         ###   ########.fr       */
+/*   Created: 2021/07/26 20:46:41 by sde-alva          #+#    #+#             */
+/*   Updated: 2021/07/26 20:55:53 by sde-alva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
-{
-	int	is_alpha;
+#include "libft.h"
 
-	is_alpha = 0;
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-		is_alpha = 1;
-	return (is_alpha);
+void	ft_putendl_fd(char *s, int fd)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		write(fd, s + i, 1);
+		i++;
+	}
+	write(fd, "\n", 1);
 }

@@ -1,21 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sde-alva <sde-alva@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/23 13:57:49 by sde-alva          #+#    #+#             */
-/*   Updated: 2021/07/25 18:19:35 by sde-alva         ###   ########.fr       */
+/*   Created: 2021/07/26 20:57:12 by sde-alva          #+#    #+#             */
+/*   Updated: 2021/07/26 21:25:31 by sde-alva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
-{
-	int	is_alpha;
+#include "libft.h"
 
-	is_alpha = 0;
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-		is_alpha = 1;
-	return (is_alpha);
+void	ft_putnbr_fd(int n, int fd)
+{
+	char	aux;
+
+	if (n >= 0 && n < 10)
+	{
+		aux = n % 10 + '0';
+		write(fd, &aux, 1);
+		return ;
+	}
+	if (n < 0)
+	{
+		aux = -1 * (n % 10) + '0';
+		write(fd, "-", 1);
+		n /= -10;
+	}
+	else
+	{
+		aux = n % 10 + '0';
+		n /= 10;
+	}
+	if (n > 0)
+		ft_putnbr_fd(n, fd);
+	write(fd, &aux, 1);
 }

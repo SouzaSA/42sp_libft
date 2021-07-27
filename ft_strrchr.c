@@ -6,7 +6,7 @@
 /*   By: sde-alva <sde-alva@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 18:50:03 by sde-alva          #+#    #+#             */
-/*   Updated: 2021/07/23 18:51:35 by sde-alva         ###   ########.fr       */
+/*   Updated: 2021/07/25 18:49:23 by sde-alva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ char	*ft_strrchr(const char *s, int c)
 	{
 		if (s[i] == (char) c)
 		{
-			match = s + i;
+			match = (char *)s + i;
 		}
 		i++;
 	}
 	if (c == '\0')
-		match = s + i;
+		match = (char *)s + i;
 	return (match);
 }

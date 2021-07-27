@@ -6,11 +6,13 @@
 /*   By: sde-alva <sde-alva@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 14:53:33 by sde-alva          #+#    #+#             */
-/*   Updated: 2021/07/25 17:20:46 by sde-alva         ###   ########.fr       */
+/*   Updated: 2021/07/26 23:47:11 by sde-alva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static size_t	ft_min2(size_t a, size_t b);
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -19,13 +21,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*sub_str;
 
 	i = 0;
-	if (len > s_len - start)
+	s_len = ft_strlen(s);
+	if (start < s_len)
 	{
-		sub_str = malloc((s_len - start + 1) * sizeof(char));
+		sub_str = malloc((ft_min2(s_len - start, len) + 1) * sizeof(char));
 	}
 	else
 	{
-		sub_str = malloc((len + 1) * sizeof(char));
+		sub_str = malloc(1 * sizeof(char));
 	}
 	if (sub_str)
 	{
@@ -37,4 +40,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		sub_str[i] = '\0';
 	}
 	return (sub_str);
+}
+
+static size_t	ft_min2(size_t a, size_t b)
+{
+	size_t	min;
+
+	min = a;
+	if (a > b)
+		min = b;
+	return (min);
 }

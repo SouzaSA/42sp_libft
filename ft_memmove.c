@@ -6,7 +6,7 @@
 /*   By: sde-alva <sde-alva@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 14:48:00 by sde-alva          #+#    #+#             */
-/*   Updated: 2021/07/25 17:26:11 by sde-alva         ###   ########.fr       */
+/*   Updated: 2021/07/25 20:18:34 by sde-alva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	int		i;
+	size_t		i;
 
 	i = 0;
 	while (i < n)
 	{
 		if (dest < src)
 		{
-			d[i] = s[i];
+			((char *)dest)[i] = ((char *)src)[i];
 		}
 		else
 		{
-			d[n - i] = s[n - i];
+			((char *)dest)[n - i] = ((char *)src)[n - i];
 		}
 		i++;
 	}	

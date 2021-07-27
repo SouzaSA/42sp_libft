@@ -6,9 +6,11 @@
 /*   By: sde-alva <sde-alva@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 14:18:56 by sde-alva          #+#    #+#             */
-/*   Updated: 2021/07/23 14:26:19 by sde-alva         ###   ########.fr       */
+/*   Updated: 2021/07/25 18:54:52 by sde-alva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {
