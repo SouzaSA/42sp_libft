@@ -6,74 +6,79 @@
 /*   By: sde-alva <sde-alva@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 18:16:48 by sde-alva          #+#    #+#             */
-/*   Updated: 2021/07/25 20:03:44 by sde-alva         ###   ########.fr       */
+/*   Updated: 2021/07/27 23:50:37 by sde-alva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static size_t	ft_count_delimiters(char const *s, char c);
+#include <stdio.h>
+static size_t	ft_count_slices(char const *s, char c);
 static char		*ft_get_str(char const *s, char c, size_t start);
 
 char	**ft_split(char const *s, char c)
 {
 	size_t	i;
 	size_t	j;
-	size_t	num_delimiters;
+	size_t	num_slices;
 	char	**splited;
 
 	i = 0;
 	j = 0;
-	num_delimiters = ft_count_delimiters(s, c);
-	splited = (char **) malloc((num_delimiters + 1) * sizeof(char *));
-	while (i <= num_delimiters)
+	num_slices = ft_count_slices(s, c);
+	splited = (char **) malloc((num_slices + 1) * sizeof(char *));
+	printf("%lu  ", num_slices);
+	if (splited)
 	{
-		if (i == 0 || s[i] == c)
-			splited[i] = ft_get_str(s, c, i);
-		i++;
+		while (s[i] != '\0')
+		{
+			if ((i == 0 && s[i] != c) || (s[i - 1] == c && s[i] != c))
+			{
+				splited[j] = ft_get_str(s, c, i);
+				j++;
+			}
+			i++;
+		}
+		splited[j] = NULL;
 	}
 	return (splited);
 }
 
-static size_t	ft_count_delimiters(char const *s, char c)
+static size_t	ft_count_slices(char const *s, char c)
 {
 	size_t	i;
-	size_t	num_delimiters;
+	size_t	num_slices;
 
 	i = 0;
-	num_delimiters = 0;
+	num_slices = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] == c)
-			num_delimiters++;
+		if (s[i] != c && (i == 0 || s[i - 1] == c))
+			num_slices++;
 		i++;
 	}
-	return (num_delimiters);
+	return (num_slices);
 }
 
 static char	*ft_get_str(char const *s, char c, size_t start)
 {
 	size_t	i;
-	size_t	len;
 	char	*str;
 
-	i = start;
-	len = 0;
-	if (start != 0)
-		i++;
-	while (s[i] != c && s[i] != '\0')
-	{
-		len++;
-		i++;
-	}
-	str = (char *)malloc((len + 1) * sizeof(char));
 	i = 0;
-	while (i < len)
+	while (s[start + i] != c && s[start + i] != '\0')
 	{
-		if (s[i] != c)
-			str[i] = s[start + i];
 		i++;
 	}
-	str[i] = '\0';
+	str = (char *)malloc((i + 1) * sizeof(char));
+	i = 0;
+	if (str)
+	{
+		while (s[start + i] != c && s[start + i] != '\0')
+		{
+			str[i] = s[start + i];
+			i++;
+		}
+		str[i] = '\0';
+	}
 	return (str);
 }

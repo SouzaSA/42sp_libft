@@ -6,7 +6,7 @@
 /*   By: sde-alva <sde-alva@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 14:53:33 by sde-alva          #+#    #+#             */
-/*   Updated: 2021/07/26 23:47:11 by sde-alva         ###   ########.fr       */
+/*   Updated: 2021/07/27 10:38:06 by sde-alva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	if (sub_str)
 	{
-		while (s[start + i] != '\0' && i < len)
+		while (i + start < s_len && i < len && s[start + i] != '\0')
 		{
 			sub_str[i] = s[start + i];
 			i++;
