@@ -17,9 +17,12 @@ t_list	*ft_lstlast(t_list *lst)
 	t_list	*node;
 
 	node = lst;
-	while (node->next)
+	if(node)
 	{
-		node = node->next;
+		while (node->next)
+		{
+			node = node->next;
+		}
 	}
 	return (node);
 }
