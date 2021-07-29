@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sde-alva <sde-alva@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/23 13:57:27 by sde-alva          #+#    #+#             */
-/*   Updated: 2021/07/28 15:18:38 by sde-alva         ###   ########.fr       */
+/*   Created: 2021/07/28 18:52:30 by sde-alva          #+#    #+#             */
+/*   Updated: 2021/07/28 20:06:04 by sde-alva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_bonus.h"
 
-int	ft_isalnum(int c)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	int	is_alnum;
-
-	is_alnum = 0;
-	if (ft_isalpha(c) || ft_isdigit(c))
-		is_alnum = 1;
-	return (is_alnum);
+	if ((*lst)->next)
+		ft_lstclear(&((*lst)->next), (*del));
+	free(*lst);
 }

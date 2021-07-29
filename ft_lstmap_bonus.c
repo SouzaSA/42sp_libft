@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sde-alva <sde-alva@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/23 13:57:27 by sde-alva          #+#    #+#             */
-/*   Updated: 2021/07/28 15:18:38 by sde-alva         ###   ########.fr       */
+/*   Created: 2021/07/28 19:19:09 by sde-alva          #+#    #+#             */
+/*   Updated: 2021/07/28 19:46:26 by sde-alva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_bonus.h"
 
-int	ft_isalnum(int c)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	int	is_alnum;
+	t_list	*mapped;
 
-	is_alnum = 0;
-	if (ft_isalpha(c) || ft_isdigit(c))
-		is_alnum = 1;
-	return (is_alnum);
+	mapped = NULL;
+	if (lst)
+	{
+		mapped = (t_list *)malloc(sizeof(t_list));
+		if (mapped)
+		{
+			mapped->content = f(lst->content);
+			mapped->next = ft_lstmap(lst->next, (*f), (*del));
+		}
+	}
+	return (mapped);
 }

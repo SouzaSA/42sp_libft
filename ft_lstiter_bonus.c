@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sde-alva <sde-alva@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/23 13:57:27 by sde-alva          #+#    #+#             */
-/*   Updated: 2021/07/28 15:18:38 by sde-alva         ###   ########.fr       */
+/*   Created: 2021/07/28 19:01:23 by sde-alva          #+#    #+#             */
+/*   Updated: 2021/07/28 20:07:01 by sde-alva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_bonus.h"
 
-int	ft_isalnum(int c)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	int	is_alnum;
+	t_list	*node;
 
-	is_alnum = 0;
-	if (ft_isalpha(c) || ft_isdigit(c))
-		is_alnum = 1;
-	return (is_alnum);
+	node = lst;
+	while (node)
+	{
+		f(node->content);
+		node = node->next;
+	}
 }

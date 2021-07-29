@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sde-alva <sde-alva@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/23 13:57:27 by sde-alva          #+#    #+#             */
-/*   Updated: 2021/07/28 15:18:38 by sde-alva         ###   ########.fr       */
+/*   Created: 2021/07/28 18:09:46 by sde-alva          #+#    #+#             */
+/*   Updated: 2021/07/28 18:19:29 by sde-alva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_bonus.h"
 
-int	ft_isalnum(int c)
+int	ft_lstsize(t_list *lst)
 {
-	int	is_alnum;
+	size_t	len;
+	t_list	*node;
 
-	is_alnum = 0;
-	if (ft_isalpha(c) || ft_isdigit(c))
-		is_alnum = 1;
-	return (is_alnum);
+	len = 0;
+	node = lst;
+	while (node)
+	{
+		node = node->next;
+		len++;
+	}
+	return (len);
 }

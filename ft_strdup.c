@@ -6,7 +6,7 @@
 /*   By: sde-alva <sde-alva@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 14:11:46 by sde-alva          #+#    #+#             */
-/*   Updated: 2021/07/25 17:12:40 by sde-alva         ###   ########.fr       */
+/*   Updated: 2021/07/28 15:57:42 by sde-alva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,18 @@
 char	*ft_strdup(const char *s)
 {
 	int		i;
-	int		s_len;
 	char	*dest;
 
 	i = 0;
-	s_len = ft_strlen(s);
-	dest = malloc(s_len * sizeof(char) + 1);
-	while (i <= s_len)
+	dest = malloc(ft_strlen(s) * sizeof(char) + 1);
+	if (dest)
 	{
-		dest[i] = s[i];
-		i++;
+		while (s[i] != '\0')
+		{
+			dest[i] = s[i];
+			i++;
+		}
+		dest[i] = '\0';
 	}
 	return (dest);
 }
