@@ -46,11 +46,13 @@ BONUS	=	\
 	ft_lstsize_bonus.c
 
 OBJS	=	${SRCS:.c=.o}
+
 BONUS_OBJS = ${BONUS:.c=.o}
 
 NAME	=	libft.a
 
 CC	=	clang
+
 RM	=	rm -f
 
 CFLAGS	=	-Wall -Wextra -Werror
