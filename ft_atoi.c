@@ -6,9 +6,11 @@
 /*   By: sde-alva <sde-alva@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 11:38:46 by sde-alva          #+#    #+#             */
-/*   Updated: 2021/08/02 16:29:49 by sde-alva         ###   ########.fr       */
+/*   Updated: 2021/08/02 16:34:20 by sde-alva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+static int	ft_atoi_err(int signal);
 
 int	ft_atoi(const char *nptr)
 {
