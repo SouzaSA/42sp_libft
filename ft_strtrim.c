@@ -6,7 +6,7 @@
 /*   By: sde-alva <sde-alva@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 16:09:56 by sde-alva          #+#    #+#             */
-/*   Updated: 2021/07/27 23:21:53 by sde-alva         ###   ########.fr       */
+/*   Updated: 2021/07/31 14:55:53 by sde-alva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	start = ft_get_first_valid(s1, set);
 	end = ft_get_last_valid(s1, set);
 	trimmed = NULL;
-	if (start < end)
-		trimmed = malloc(end - start + 2);
+	if (start <= end)
+		trimmed = (char *)malloc((end - start + 2) * sizeof(char));
 	else
-		trimmed = malloc(1);
+		trimmed = (char *)malloc(sizeof(char));
 	if (trimmed)
 	{
 		while (start + i <= end)

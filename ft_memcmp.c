@@ -6,7 +6,7 @@
 /*   By: sde-alva <sde-alva@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 19:46:36 by sde-alva          #+#    #+#             */
-/*   Updated: 2021/07/31 11:06:50 by sde-alva         ###   ########.fr       */
+/*   Updated: 2021/07/31 14:00:42 by sde-alva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	diff = 0;
 	if (n > 0)
 	{
-		while (i < n && v1[i] == v2[i] )
+		while (i < n && v1[i] == v2[i])
 			i++;
 		if (i < n)
 			diff = (int)(v1[i] - v2[i]);
