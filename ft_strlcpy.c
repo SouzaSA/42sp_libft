@@ -6,7 +6,7 @@
 /*   By: sde-alva <sde-alva@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 16:58:52 by sde-alva          #+#    #+#             */
-/*   Updated: 2021/08/04 11:15:25 by sde-alva         ###   ########.fr       */
+/*   Updated: 2021/08/04 11:18:39 by sde-alva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
-	size_t	src_len;
 
 	if (!src || !dst)
 		return (0);
