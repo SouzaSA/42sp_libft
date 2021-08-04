@@ -6,7 +6,7 @@
 /*   By: sde-alva <sde-alva@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 18:16:48 by sde-alva          #+#    #+#             */
-/*   Updated: 2021/07/28 14:26:36 by sde-alva         ###   ########.fr       */
+/*   Updated: 2021/08/04 09:54:05 by sde-alva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,12 @@ char	**ft_split(char const *s, char c)
 	size_t	num_slices;
 	char	**splited;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	j = 0;
 	num_slices = ft_count_slices(s, c);
-	splited = (char **) malloc((num_slices + 1) * sizeof(char *));
+	splited = (char **)malloc((num_slices + 1) * sizeof(char *));
 	if (splited)
 	{
 		while (s[i] != '\0')

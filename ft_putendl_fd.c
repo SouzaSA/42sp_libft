@@ -6,7 +6,7 @@
 /*   By: sde-alva <sde-alva@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 20:46:41 by sde-alva          #+#    #+#             */
-/*   Updated: 2021/07/26 20:55:53 by sde-alva         ###   ########.fr       */
+/*   Updated: 2021/08/04 10:01:48 by sde-alva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,14 @@ void	ft_putendl_fd(char *s, int fd)
 {
 	size_t	i;
 
-	i = 0;
-	while (s[i] != '\0')
+	if (s)
 	{
-		write(fd, s + i, 1);
-		i++;
+		i = 0;
+		while (s[i] != '\0')
+		{
+			write(fd, s + i, 1);
+			i++;
+		}
+		write(fd, "\n", 1);
 	}
-	write(fd, "\n", 1);
 }
