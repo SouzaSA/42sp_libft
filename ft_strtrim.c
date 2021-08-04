@@ -6,7 +6,7 @@
 /*   By: sde-alva <sde-alva@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 16:09:56 by sde-alva          #+#    #+#             */
-/*   Updated: 2021/08/04 09:49:22 by sde-alva         ###   ########.fr       */
+/*   Updated: 2021/08/04 11:58:32 by sde-alva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,8 +85,12 @@ static int	ft_trimmed_size(int start, int end)
 	int	size;
 
 	if (start <= end)
+	{
 		size = end - start + 2;
+	}
 	else
+	{
 		size = 1;
+	}
 	return (size);
 }
