@@ -6,7 +6,7 @@
 /*   By: sde-alva <sde-alva@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 14:53:33 by sde-alva          #+#    #+#             */
-/*   Updated: 2021/08/04 11:12:58 by sde-alva         ###   ########.fr       */
+/*   Updated: 2021/08/04 11:26:42 by sde-alva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,10 @@ static size_t	ft_sub_len(size_t start, size_t s_len, size_t len)
 	size_t	sub_len;
 
 	sub_len = 0;
-	if (start < len)
+	if (start < s_len)
 	{
 		sub_len = s_len - start;
-		if (sub_len < len)
+		if (sub_len > len)
 			sub_len = len;
 	}
 	sub_len++;
