@@ -22,13 +22,19 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*trimmed;
 
 	trimmed = NULL;
-	if (s1 && set)
+	if (1)
 	{
 		start = ft_get_first_valid(s1, set);
 		end = ft_get_last_valid(s1, set);
 		if (start <= end)
 		{
 			trimmed = ft_substr(s1, start, (end - start + 1));
+		}
+		else
+		{
+			trimmed = (char *)malloc(sizeof(char));
+			if (trimmed)
+				trimmed[0] = '\0';
 		}
 	}
 	return (trimmed);
