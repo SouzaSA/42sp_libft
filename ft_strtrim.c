@@ -12,7 +12,6 @@
 
 #include "libft.h"
 
-static int	ft_is_in_set(char const c, char const *set);
 static int	ft_get_first_valid(char const *s1, char const *set);
 static int	ft_get_last_valid(char const *s1, char const *set);
 static int	ft_trimmed_size(int start, int end);
@@ -44,28 +43,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (trimmed);
 }
 
-static int	ft_is_in_set(char const c, char const *set)
-{
-	int	i;
-	int	in_set;
-
-	i = 0;
-	in_set = 0;
-	while (set[i] != '\0')
-	{
-		if (set[i] == c)
-			in_set = 1;
-		i++;
-	}
-	return (in_set);
-}
-
 static int	ft_get_first_valid(char const *s1, char const *set)
 {
 	int	i;
 
 	i = 0;
-	while (ft_is_in_set(s1[i], set) && s1[i] != '\0')
+	while (ft_strrchr(set, s1[i]) && s1[i] != '\0')
 		i++;
 	return (i);
 }
@@ -75,7 +58,7 @@ static int	ft_get_last_valid(char const *s1, char const *set)
 	int	i;
 
 	i = ft_strlen(s1) - 1;
-	while (ft_is_in_set(s1[i], set) && i >= 0)
+	while (ft_strrchr(set, s1[i]) && i >= 0)
 		i--;
 	return (i);
 }
