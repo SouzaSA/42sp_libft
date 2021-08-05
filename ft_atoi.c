@@ -6,7 +6,7 @@
 /*   By: sde-alva <sde-alva@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 11:38:46 by sde-alva          #+#    #+#             */
-/*   Updated: 2021/08/02 16:34:20 by sde-alva         ###   ########.fr       */
+/*   Updated: 2021/08/05 19:43:39 by sde-alva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,8 @@ static int	ft_atoi_err(int signal)
 {
 	int	err_val;
 
-	if (signal > 0)
-	{
-		err_val = 0;
-	}
-	else
-	{
+	err_val = 0;
+	if (signal < 0)
 		err_val = -1;
-	}
 	return (err_val);
 }
