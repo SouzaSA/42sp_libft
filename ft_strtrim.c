@@ -26,14 +26,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	{
 		start = ft_get_first_valid(s1, set);
 		end = ft_get_last_valid(s1, set);
-		if (start <= end)
-		{
-			trimmed = ft_substr(s1, start, (end - start + 1));
-		}
-		else
-		{
-			trimmed = (char *)ft_calloc(1, sizeof(char));
-		}
+		if (start > end)
+			end = start;
+		trimmed = ft_substr(s1, start, (end - start + 1));
 	}
 	return (trimmed);
 }
