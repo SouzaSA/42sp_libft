@@ -17,12 +17,10 @@ static int	ft_get_last_valid(char const *s1, char const *set);
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		i;
 	int		start;
 	int		end;
 	char	*trimmed;
 
-	i = 0;
 	trimmed = NULL;
 	if (s1 && set)
 	{
@@ -31,12 +29,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 		if (start <= end)
 		{
 			trimmed = ft_substr(s1, start, (end - start + 1));
-		}
-		else
-		{
-			trimmed = (char *)malloc(sizeof(char));
-			if (trimmed)
-				trimmed[0] = '\0';
 		}
 	}
 	return (trimmed);
