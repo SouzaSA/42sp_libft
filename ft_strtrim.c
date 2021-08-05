@@ -14,7 +14,6 @@
 
 static int	ft_get_first_valid(char const *s1, char const *set);
 static int	ft_get_last_valid(char const *s1, char const *set);
-static int	ft_trimmed_size(int start, int end);
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -29,15 +28,15 @@ char	*ft_strtrim(char const *s1, char const *set)
 	{
 		start = ft_get_first_valid(s1, set);
 		end = ft_get_last_valid(s1, set);
-		trimmed = (char *)malloc(ft_trimmed_size(start, end) * sizeof(char));
-		if (trimmed)
+		if (start <= end)
 		{
-			while (start + i <= end)
-			{
-				trimmed[i] = s1[start + i];
-				i++;
-			}
-			trimmed[i] = '\0';
+			trimmed = ft_substr(s1, start, (end - start + 1));
+		}
+		else
+		{
+			trimmed = (char *)malloc(sizeof(char));
+			if (trimmed)
+				trimmed[0] = '\0';
 		}
 	}
 	return (trimmed);
@@ -61,19 +60,4 @@ static int	ft_get_last_valid(char const *s1, char const *set)
 	while (ft_strrchr(set, s1[i]) && i >= 0)
 		i--;
 	return (i);
-}
-
-static int	ft_trimmed_size(int start, int end)
-{
-	int	size;
-
-	if (start <= end)
-	{
-		size = end - start + 2;
-	}
-	else
-	{
-		size = 1;
-	}
-	return (size);
 }
