@@ -22,7 +22,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*trimmed;
 
 	trimmed = NULL;
-	if (1)
+	if (s1 && set)
 	{
 		start = ft_get_first_valid(s1, set);
 		end = ft_get_last_valid(s1, set);
