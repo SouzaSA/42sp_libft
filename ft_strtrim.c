@@ -32,9 +32,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		}
 		else
 		{
-			trimmed = (char *)malloc(sizeof(char));
-			if (trimmed)
-				trimmed[0] = '\0';
+			trimmed = (char *)calloc(1, sizeof(char));
 		}
 	}
 	return (trimmed);
