@@ -52,7 +52,7 @@ static int	ft_get_last_valid(char const *s1, char const *set)
 {
 	int	i;
 
-	i = ft_strlen(s1) - 1;
+	i = (int)ft_strlen(s1) - 1;
 	while (ft_strrchr(set, s1[i]) && i >= 0)
 		i--;
 	return (i);
