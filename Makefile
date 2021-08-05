@@ -42,7 +42,7 @@ BONUS	=	\
 	ft_lstiter.c	\
 	ft_lstlast.c	\
 	ft_lstmap.c	\
-	ft_lstnew_.c	\
+	ft_lstnew.c	\
 	ft_lstsize.c
 
 OBJS	=	${SRCS:.c=.o}
