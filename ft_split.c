@@ -6,7 +6,7 @@
 /*   By: sde-alva <sde-alva@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 18:16:48 by sde-alva          #+#    #+#             */
-/*   Updated: 2021/08/04 09:54:05 by sde-alva         ###   ########.fr       */
+/*   Updated: 2021/08/06 01:03:12 by sde-alva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,7 @@ static char	*ft_get_str(char const *s, char c, size_t start)
 
 	i = 0;
 	while (s[start + i] != c && s[start + i] != '\0')
-	{
 		i++;
-	}
 	str = (char *)malloc((i + 1) * sizeof(char));
 	i = 0;
 	if (str)

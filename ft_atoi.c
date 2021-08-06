@@ -6,7 +6,7 @@
 /*   By: sde-alva <sde-alva@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 11:38:46 by sde-alva          #+#    #+#             */
-/*   Updated: 2021/08/05 19:43:39 by sde-alva         ###   ########.fr       */
+/*   Updated: 2021/08/06 19:37:20 by sde-alva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,12 @@ int	ft_atoi(const char *nptr)
 	while (nptr[i] >= '0' && nptr[i] <= '9' && nptr[i] != '\0')
 	{
 		prev = result;
-		result = result * 10 - (nptr[i] - '0');
+		result = (long)(result * 10 - (nptr[i] - '0'));
 		if (prev < result)
 			return (ft_atoi_err(signal));
 		i++;
 	}
-	return (signal * result);
+	return (signal * ((int)result));
 }
 
 static int	ft_atoi_err(int signal)
