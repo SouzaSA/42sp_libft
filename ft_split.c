@@ -6,7 +6,7 @@
 /*   By: sde-alva <sde-alva@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 18:16:48 by sde-alva          #+#    #+#             */
-/*   Updated: 2021/08/08 23:42:49 by sde-alva         ###   ########.fr       */
+/*   Updated: 2021/08/09 19:04:05 by sde-alva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static size_t	ft_count_slices(char const *s, char c);
 static char		*ft_get_str(char const *s, char c, size_t start);
-static int		ft_free_split(char **splited);
+static char		*ft_free_split(char **splited);
 
 char	**ft_split(char const *s, char c)
 {
@@ -83,7 +83,7 @@ static char	*ft_get_str(char const *s, char c, size_t start)
 	return (str);
 }
 
-static int	ft_free_split(char **splited)
+static char	*ft_free_split(char **splited)
 {
 	int	i;
 
@@ -94,5 +94,5 @@ static int	ft_free_split(char **splited)
 		i++;
 	}
 	free(splited);
-	return (-1);
+	return (NULL);
 }
