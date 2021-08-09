@@ -6,7 +6,7 @@
 /*   By: sde-alva <sde-alva@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 18:16:48 by sde-alva          #+#    #+#             */
-/*   Updated: 2021/08/06 01:03:12 by sde-alva         ###   ########.fr       */
+/*   Updated: 2021/08/08 23:42:49 by sde-alva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,19 @@
 
 static size_t	ft_count_slices(char const *s, char c);
 static char		*ft_get_str(char const *s, char c, size_t start);
+static int		ft_free_split(char **splited);
 
 char	**ft_split(char const *s, char c)
 {
 	size_t	i;
 	size_t	j;
-	size_t	num_slices;
 	char	**splited;
 
 	if (!s)
 		return (NULL);
 	i = 0;
 	j = 0;
-	num_slices = ft_count_slices(s, c);
-	splited = (char **)malloc((num_slices + 1) * sizeof(char *));
+	splited = (char **)malloc((ft_count_slices(s, c) + 1) * sizeof(char *));
 	if (splited)
 	{
 		while (s[i] != '\0')
@@ -35,6 +34,8 @@ char	**ft_split(char const *s, char c)
 			if (s[i] != c && (i == 0 || s[i - 1] == c))
 			{
 				splited[j] = ft_get_str(s, c, i);
+				if (!splited)
+					return (ft_free_split(splited));
 				j++;
 			}
 			i++;
@@ -80,4 +81,18 @@ static char	*ft_get_str(char const *s, char c, size_t start)
 		str[i] = '\0';
 	}
 	return (str);
+}
+
+static int	ft_free_split(char **splited)
+{
+	int	i;
+
+	i = 0;
+	while (splited[i])
+	{
+		free(splited[i]);
+		i++;
+	}
+	free(splited);
+	return (-1);
 }
