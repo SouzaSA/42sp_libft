@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace.c                                       :+:      :+:    :+:   */
+/*   ft_smallest_int.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sde-alva <sde-alva@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/15 12:02:25 by sde-alva          #+#    #+#             */
-/*   Updated: 2021/11/22 14:44:18 by sde-alva         ###   ########.fr       */
+/*   Created: 2021/11/06 15:38:43 by sde-alva          #+#    #+#             */
+/*   Updated: 2021/11/13 11:13:56 by sde-alva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isspace(int c)
+size_t	ft_smallest_int_idx(int *array, size_t size)
 {
-	int	is_space;
+	size_t	i;
+	int		min;
 
-	is_space = 0;
-	if ((c >= 9 && c <= 13) || c == 32)
-		is_space = 1;
-	return (is_space);
+	i = 1;
+	min = 0;
+	if (array && size > 0)
+	{
+		while (i < size)
+		{
+			if (array[min] > array[i])
+				min = i;
+			i++;
+		}
+	}
+	return (min);
 }

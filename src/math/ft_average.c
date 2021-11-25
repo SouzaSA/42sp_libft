@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace.c                                       :+:      :+:    :+:   */
+/*   ft_average.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sde-alva <sde-alva@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/15 12:02:25 by sde-alva          #+#    #+#             */
-/*   Updated: 2021/11/22 14:44:18 by sde-alva         ###   ########.fr       */
+/*   Created: 2021/11/06 16:19:38 by sde-alva          #+#    #+#             */
+/*   Updated: 2021/11/13 11:16:46 by sde-alva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isspace(int c)
+int	ft_average(int nb_a, int nb_b)
 {
-	int	is_space;
-
-	is_space = 0;
-	if ((c >= 9 && c <= 13) || c == 32)
-		is_space = 1;
-	return (is_space);
+	return ((nb_a + nb_b) / 2);
 }

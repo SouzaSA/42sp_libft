@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace.c                                       :+:      :+:    :+:   */
+/*   ft_split_len.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sde-alva <sde-alva@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/15 12:02:25 by sde-alva          #+#    #+#             */
-/*   Updated: 2021/11/22 14:44:18 by sde-alva         ###   ########.fr       */
+/*   Created: 2021/11/04 10:15:30 by sde-alva          #+#    #+#             */
+/*   Updated: 2021/11/04 10:17:55 by sde-alva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isspace(int c)
+size_t	ft_split_len(char **splitted)
 {
-	int	is_space;
+	int	i;
 
-	is_space = 0;
-	if ((c >= 9 && c <= 13) || c == 32)
-		is_space = 1;
-	return (is_space);
+	i = 0;
+	while (splitted[i])
+		i++;
+	return (i);
 }
